@@ -1,0 +1,38 @@
+{
+  "name": "cadre-typescript-utils",
+  "version": "1.0.0",
+  "description": "Utility functions, settings, and setups for Cadre TypeScript projects.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/siggame/Cadre-TS-Utils"
+  },
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "dependencies": {
+    "tslint-eslint-rules": "5.4.0",
+    "tslint-microsoft-contrib": "5.2.1",
+    "tslint-no-math-random": "1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "10.10.3",
+    "husky": "0.14.3",
+    "shx": "0.3.2",
+    "tslint": "5.11.0",
+    "typescript": "3.0.3"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run build:test",
+    "build": "tsc",
+    "build:test": "tsc --noEmit",
+    "build:watch": "tsc --watch",
+    "clean": "shx rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force",
+    "precommit": "npm test"
+  }
+}
