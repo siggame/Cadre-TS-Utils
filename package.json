@@ -1,5 +1,5 @@
 {
-  "name": "cadre-typescript-utils",
+  "name": "cadre-ts-utils",
   "version": "1.0.0",
   "description": "Utility functions, settings, and setups for Cadre TypeScript projects.",
   "repository": {
@@ -9,6 +9,7 @@
   "license": "MIT",
   "private": true,
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "tslint-eslint-rules": "5.4.0",
     "tslint-microsoft-contrib": "5.2.1",
