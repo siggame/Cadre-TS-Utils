@@ -1,3 +1,4 @@
+import { ArrayWithOneOrMore } from "./array-with-one-or-more";
 import { getWrapAroundAt } from "./get-wrap-around-at";
 
 /**
@@ -12,11 +13,18 @@ import { getWrapAroundAt } from "./get-wrap-around-at";
  * element at the offset from the passed in element in the array, wrapping
  * around.
  */
-export function getWrapAround<T>(array: T[], element: T, offset?: number): T | undefined {
+export function getWrapAround<T, A extends ReadonlyArray<T>>(
+    array: A,
+    element: T,
+    offset?: number,
+): A extends ReadonlyArray<ArrayWithOneOrMore<T>>
+    ? T
+    : T | undefined {
+    // tslint:disable:no-any no-unsafe-any
     const index = array.indexOf(element);
     if (index < 0) {
-        return;
+        return undefined as any;
     }
 
-    return getWrapAroundAt(array, index + (offset || 0));
+    return getWrapAroundAt(array, index + (offset || 0)) as any;
 }

@@ -2,13 +2,17 @@
 // any is allowed for comparison usage (>, <, ===)
 
 /**
- * Returns a newly sorted array of the passed in array. The passed in array is not changed
- * @param array the array to form a sorted one from
- * @param getVal optional callback to get the value from each item to compare against
- * @returns a new array that is the sorted form of the passed in array
+ * Returns a newly sorted array of the passed in array.
+ * The passed in array is not changed.
+ *
+ * @param array - The array to form a sorted one from.
+ * @param getVal - An optional callback to get the value from each item to
+ * compare against.
+ * @returns A new array that is the sorted form of the passed in array.
  */
 export function sortedAscending<T>(
-    array: T[], getVal?: (element: T) => any,
+    array: ReadonlyArray<T>,
+    getVal?: (element: T) => any,
 ): T[] {
     return array.slice().sort((a, b) => {
         let first: any = a;
