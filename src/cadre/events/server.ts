@@ -4,9 +4,14 @@
  */
 
 import { IDeltaMergeConstants } from "../delta-merge";
+import { IEvent } from "./event";
 
-/** Sent to clients when the game is over. For the "over" event. */
-export interface IOverData {
+/**
+ * Sent from the server to clients when the game is over.
+ *
+ * This is always the final event in a normal game.
+ */
+export type OverEvent = IEvent<"over", {
     /** An absoulte URL to the gamelog as JSON. */
     gamelogURL: string;
 
@@ -18,22 +23,25 @@ export interface IOverData {
 
     /** A message to tell the client about why the game is over. */
     message?: string;
-}
+}>;
 
-/** Sent to clients when the game has started. For the "start" event. */
-export interface IStartData {
+/**
+ * Sent to clients when the game has started. For the "start" event.
+ * Always sent after "lobbied".
+ */
+export type StartEvent = IEvent<"start", {
     /**
      * The GameObject.id of the player they control. If they are a spectator
      * this will be undefined, as they have no player.
      */
     playerID?: string;
-}
+}>;
 
 /**
  * Sent to clients when they need to run an order (function).
  * For the "order" event.
  */
-export interface IOrderData {
+export type OrderEvent = IEvent<"order", {
     /** Name of the function to execute on their AI. */
     name: string;
 
@@ -48,25 +56,25 @@ export interface IOrderData {
      * @example ["foo", "bar", 1337] -> ai.order[name]("foo", "bar", 1337)
      */
     args: Array<unknown>;
-}
+}>;
 
 /**
  * Sent to clients when something they send gameplay wise is invalid.
  * For the "invalid" event.
  */
-export interface IInvalidData {
+export type InvalidEvent = IEvent<"invalid", {
     /** Human readable message as to why it is invalid. */
     message: string;
 
     /** Data about why it is invalid, if any. */
     data?: unknown;
-}
+}>;
 
 /**
- * Sent to clients when they join a Lobby but the game has not started.
- * For the "lobbied" event.
+ * Send from the server to a client once they are in a game lobby,
+ * but before a game starts.
  */
-export interface ILobbiedData {
+export type LobbiedEvent = IEvent<"lobbied", {
     /** The actual name (id) of the game you will be playing. */
     gameName: string;
 
@@ -75,13 +83,19 @@ export interface ILobbiedData {
 
     /** Constants used to facilitate game IO communication. */
     constants: IDeltaMergeConstants;
-}
+}>;
+
+/**
+ * Sent from the game server to a single client once a game alias has been
+ * "named" to it's game name (id)
+ */
+export type NamedEvent = IEvent<"named", string>;
 
 /**
  * Sent to clients when something happens that is so bad, they must be
  * forcefully disconnected. For the "fatal" event.
  */
-export interface IFatalData {
+export type FatalEvent = IEvent<"fatal", {
     /**
      * Message about why the fatal event occured.
      *
@@ -90,4 +104,4 @@ export interface IFatalData {
      * the game server to force disconnect it.
      */
     message?: string;
-}
+}>;

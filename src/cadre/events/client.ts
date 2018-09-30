@@ -4,18 +4,19 @@
  */
 
 import { IGameObjectReference } from "../base-game-object";
+import { IEvent } from "./event";
 
-/** Data clients send with a "finished" event */
-export interface IFinishedData {
+/** Sent from the client when they "finished" an order. */
+export type FinishedEvent = IEvent<"finished", {
     /** The index (id) of the order that was finished by this client. */
     orderIndex: number;
 
     /** What value they returned from said function executing. */
     returned: unknown;
-}
+}>;
 
-/** Data clients second with a "run" event */
-export interface IRunData {
+/** Sent from the client when they want the game server to "run" logic. */
+export type RunEvent = IEvent<"run", {
     /** The reference to the game object requesting a function to be run. */
     caller: IGameObjectReference; // tslint:disable-line:no-banned-terms
 
@@ -27,10 +28,10 @@ export interface IRunData {
      * value.
      */
     args: { [key: string]: unknown };
-}
+}>;
 
 /** Sent from a client to the Lobby about what that client wants to play */
-export interface IPlayData {
+export type PlayEvent = IEvent<"play", {
     /**
      * The name (id) of the game to play. Assume this is an alias before using.
      */
@@ -75,4 +76,10 @@ export interface IPlayData {
      * Any other value will be treated as false (such as omitting the key).
      */
     spectating?: boolean;
-}
+}>;
+
+/**
+ * Sent from the client when they want to know the game name for a given
+ * string game alias.
+ */
+export type AliasEvent = IEvent<"alias", string>;

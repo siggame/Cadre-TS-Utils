@@ -1,7 +1,7 @@
 import { UnknownObject } from "../object/unknown-object";
 import { IGameObjectReference } from "./base-game-object";
-import { IRunData } from "./events/client";
-import { IOrderData } from "./events/server";
+import { RunEvent } from "./events/client";
+import { OrderEvent } from "./events/server";
 
 /** The shape of a gamelog, both being built and if read from memory. */
 export interface IGamelog {
@@ -85,7 +85,7 @@ export interface IRanDeltaData {
     player: IGameObjectReference;
 
     /** The data about what was requested be run. */
-    run: IRunData;
+    run: RunEvent["data"];
 
     /** A human reable string explaining why this run was invalid. */
     invalid?: string;
@@ -103,7 +103,7 @@ export interface IOrderedDeltaData {
     player: IGameObjectReference;
 
     /** The order data they were sent. */
-    order: IOrderData;
+    order: OrderEvent["data"];
 }
 
 /** Data bout a player finishing an order. */
@@ -112,7 +112,7 @@ export interface IFinishedDeltaData {
     player: IGameObjectReference;
 
     /** The data about the order they finished. */
-    order: IOrderData;
+    order: OrderEvent["data"];
 
     /** An optional return value they returned. */
     returned?: unknown;
