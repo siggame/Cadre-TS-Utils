@@ -125,3 +125,19 @@ export type FatalEvent = IEvent<"fatal", {
      */
     message?: string;
 }>;
+
+// ------------------------------------------------------------------------- \\
+
+/** A possible event sent from the server to client(s). */
+export type ServerEvent
+    = NamedEvent
+    | LobbiedEvent
+    | StartEvent
+    | OrderEvent
+    | RanEvent
+    | DeltaEvent
+    | MetaDeltaEvent
+    | InvalidEvent
+    | FatalEvent
+    | OverEvent
+;

@@ -83,3 +83,13 @@ export type PlayEvent = IEvent<"play", {
  * string game alias.
  */
 export type AliasEvent = IEvent<"alias", string>;
+
+// ------------------------------------------------------------------------- \\
+
+/** One of the possible events that a client can send to its server. */
+export type ClientEvent
+    = AliasEvent
+    | PlayEvent
+    | RunEvent
+    | FinishedEvent
+;
