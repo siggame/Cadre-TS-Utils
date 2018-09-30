@@ -1,6 +1,7 @@
 import { UnknownObject } from "../object/unknown-object";
 import { IBaseGame } from "./base-game";
 import { IGameObjectReference } from "./base-game-object";
+import { IDeltaMergeConstants } from "./delta-merge";
 import { RunEvent } from "./events/client";
 import { OrderEvent } from "./events/server";
 
@@ -23,7 +24,10 @@ export interface IGamelog {
     /**
      * Key/Value pairs that describe the settings used to initialize the game.
      */
-    settings: UnknownObject;
+    settings: UnknownObject & {
+        /** The random seed used for server side random logic. */
+        randomSeed: string;
+    };
 
     /** The list of all players that won this game (normally just one) */
     winners: IGamelogWinnerLoser[];
@@ -32,10 +36,7 @@ export interface IGamelog {
     losers: IGamelogWinnerLoser[];
 
     /** Lookup of constants used to parse game server <-> client IO */
-    constants: UnknownObject & {
-        /** The random seed used for server side random logic. */
-        randomSeed: string;
-    };
+    constants: IDeltaMergeConstants;
 
     /**
      * The list of all deltas in the game. The first delta being the initial
