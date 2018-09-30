@@ -31,7 +31,10 @@ export interface IGamelog {
     losers: IGamelogWinnerLoser[];
 
     /** Lookup of constants used to parse game server <-> client IO */
-    constants: UnknownObject;
+    constants: UnknownObject & {
+        /** The random seed used for server side random logic. */
+        randomSeed: string;
+    };
 
     /**
      * The list of all deltas in the game. The first delta being the initial
@@ -49,7 +52,10 @@ export interface IDelta {
      * Meta data about why the delta occurred, such as data sent to the server
      * from a game client
      */
-    data?: IDeltaData;
+    data?: IDisconnectDeltaData |
+           IRanDeltaData |
+           IOrderedDeltaData |
+           IFinishedDeltaData;
 
     /**
      * The state of the game, but ONLY changed keys.
@@ -61,13 +67,8 @@ export interface IDelta {
     game: UnknownObject;
 }
 
-/** The base delta data interface */
-export interface IDeltaData {
-    [key: string]: unknown;
-}
-
 /** Data about why a player disconnected. */
-export interface IDisconnectDeltaData extends IDeltaData {
+export interface IDisconnectDeltaData {
     /** The player that disconnected */
     player: IGameObjectReference;
 
@@ -79,7 +80,7 @@ export interface IDisconnectDeltaData extends IDeltaData {
 }
 
 /** Data about what game logic got ran. */
-export interface IRanDeltaData extends IDeltaData {
+export interface IRanDeltaData {
     /** The player that requested this game logic be ran. */
     player: IGameObjectReference;
 
@@ -97,7 +98,7 @@ export interface IRanDeltaData extends IDeltaData {
 }
 
 /** Data about a player being ordered to do something. */
-export interface IOrderedDeltaData extends IDeltaData {
+export interface IOrderedDeltaData {
     /** The player that was ordered. */
     player: IGameObjectReference;
 
@@ -106,7 +107,7 @@ export interface IOrderedDeltaData extends IDeltaData {
 }
 
 /** Data bout a player finishing an order. */
-export interface IFinishedDeltaData extends IDeltaData {
+export interface IFinishedDeltaData {
     /** The player that said they finished an order. */
     player: IGameObjectReference;
 
@@ -143,3 +144,11 @@ export interface IGamelogWinnerLoser {
     /** Indicates if they timed out before the game was over */
     timedOut: boolean;
 }
+
+/** An eassier to deduce type for why a delta occured. */
+export type DeltaReason = Partial<
+    IDisconnectDeltaData &
+    IRanDeltaData &
+    IOrderedDeltaData &
+    IFinishedDeltaData
+>;
