@@ -1,5 +1,5 @@
 import { wrapAround } from "../math/wrap-around";
-import { ArrayWithOneOrMore } from "./array-with-one-or-more";
+import { NonEmptyArray } from "./array-with-one-or-more";
 
 /**
  * Gets an element in the array wrapping around (both ways), so -1 would be the
@@ -15,7 +15,7 @@ import { ArrayWithOneOrMore } from "./array-with-one-or-more";
 export function getWrapAroundAt<T, A extends ReadonlyArray<T>>(
     array: A,
     index: number,
-): A extends Readonly<ArrayWithOneOrMore<T>>
+): A extends Readonly<NonEmptyArray<T>>
     ? T
     : T | undefined {
     // tslint:disable-next-line:no-any no-unsafe-any

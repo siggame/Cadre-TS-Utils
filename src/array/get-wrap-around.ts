@@ -1,4 +1,4 @@
-import { ArrayWithOneOrMore } from "./array-with-one-or-more";
+import { NonEmptyArray } from "./array-with-one-or-more";
 import { getWrapAroundAt } from "./get-wrap-around-at";
 
 /**
@@ -17,7 +17,7 @@ export function getWrapAround<T, A extends ReadonlyArray<T>>(
     array: A,
     element: T,
     offset?: number,
-): A extends ReadonlyArray<ArrayWithOneOrMore<T>>
+): A extends ReadonlyArray<NonEmptyArray<T>>
     ? T
     : T | undefined {
     // tslint:disable:no-any no-unsafe-any

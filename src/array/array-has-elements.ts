@@ -1,4 +1,4 @@
-import { ArrayWithOneOrMore } from "./array-with-one-or-more";
+import { NonEmptyArray } from "./array-with-one-or-more";
 
 /**
  * Checks if an array has at least 1 item, and types it as such.
@@ -8,6 +8,6 @@ import { ArrayWithOneOrMore } from "./array-with-one-or-more";
  */
 export function arrayHasElements<T>(
     array: ReadonlyArray<T>,
-): array is ArrayWithOneOrMore<T> {
+): array is NonEmptyArray<T> {
     return array.length > 0;
 }

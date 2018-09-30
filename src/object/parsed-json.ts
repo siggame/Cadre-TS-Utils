@@ -5,5 +5,5 @@ export type ParsedJSON
     | boolean
     | null
     | { [key: string]: ParsedJSON }
-    // Parsed[] - unfortunately creates a cycle :(
+    // ParsedJSON[] - unfortunately creates a cycle :(
 ;
