@@ -1,5 +1,5 @@
-import { NonEmptyArray } from "./array-with-one-or-more";
 import { getWrapAroundAt } from "./get-wrap-around-at";
+import { NonEmptyArray } from "./non-empty-array";
 
 /**
  * Returns the next element in the array by some offset, wrapping around if

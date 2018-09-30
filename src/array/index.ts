@@ -1,5 +1,5 @@
 export * from "./array-has-elements";
-export * from "./array-with-one-or-more";
+export * from "./non-empty-array";
 export * from "./filter-in-place";
 export * from "./get-minus-array";
 export * from "./get-next-wrap-around";

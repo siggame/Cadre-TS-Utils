@@ -1,4 +1,4 @@
-import { NonEmptyArray } from "./array-with-one-or-more";
+import { NonEmptyArray } from "./non-empty-array";
 
 /**
  * Checks if an array has at least 1 item, and types it as such.
