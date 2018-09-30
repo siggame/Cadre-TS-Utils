@@ -1,4 +1,5 @@
 import { UnknownObject } from "../object/unknown-object";
+import { IBaseGame } from "./base-game";
 import { IGameObjectReference } from "./base-game-object";
 import { RunEvent } from "./events/client";
 import { OrderEvent } from "./events/server";
@@ -64,7 +65,7 @@ export interface IDelta {
      * communication in the cadre framework. Refer to these docs for more help:
      * https://github.com/siggame/Cadre/blob/master/gamelog-format.md#deltas
      */
-    game: UnknownObject;
+    game: Partial<IBaseGame & UnknownObject>;
 }
 
 /** Data about why a player disconnected. */

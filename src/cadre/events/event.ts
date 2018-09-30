@@ -7,7 +7,7 @@
  */
 export interface IEvent<
     E extends string,
-    D extends number | string | object | undefined | null,
+    D extends unknown,
 > {
     /** The string name of the event that occured. */
     event: E;

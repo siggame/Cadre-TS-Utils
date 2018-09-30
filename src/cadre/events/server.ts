@@ -4,6 +4,7 @@
  */
 
 import { IDeltaMergeConstants } from "../delta-merge";
+import { IDelta } from "../gamelog";
 import { IEvent } from "./event";
 
 /**
@@ -84,6 +85,25 @@ export type LobbiedEvent = IEvent<"lobbied", {
     /** Constants used to facilitate game IO communication. */
     constants: IDeltaMergeConstants;
 }>;
+
+/**
+ * Returned to a client once some game logic has ben "ran" for it. The data
+ * is the return value of that run event sent.
+ */
+export type RanEvent = IEvent<"ran", unknown>;
+
+/**
+ * Triggers after serialized game logic finished and the game state changed
+ * in some way. The data of the delta is a partial of the game in delta format.
+ */
+export type DeltaEvent = IEvent<"delta", IDelta["game"]>;
+
+/**
+ * The same as a normal delta event, but the data is the entire delta, instead
+ * of just the game state. Intended for spectators who want the entire
+ * gamelog instead just game data.
+ */
+export type MetaDeltaEvent = IEvent<"meta-delta", IDelta>;
 
 /**
  * Sent from the game server to a single client once a game alias has been
