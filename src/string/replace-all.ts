@@ -10,7 +10,12 @@ import { escapeRegExp } from "./escape-reg-exp";
  * search with.
  * @returns A string with ALL occurrences of search within target replaced with
  * the replacement string.
+ * @example replaceAll("foo-bar-baz", "-") -> "foo bar baz"
  */
-export function replaceAll(target: string, search: string, replacement: string = ""): string {
+export function replaceAll(
+    target: string,
+    search: string,
+    replacement: string = "",
+): string {
     return target.replace(new RegExp(escapeRegExp(search), "g"), replacement);
 }

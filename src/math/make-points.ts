@@ -19,7 +19,9 @@ export function makePoints(...args: Array<unknown>): IPoint[] {
             }
             else {
                 if (!arg.x || !arg.y) {
-                    throw new Error(`arg ${arg} does not have point like structure!`);
+                    throw new Error(
+                        `arg ${arg} does not have point like structure!`,
+                    );
                 }
                 points.push({
                     x: Number(arg.x),

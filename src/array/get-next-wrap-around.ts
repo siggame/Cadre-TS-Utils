@@ -1,4 +1,5 @@
 import { getWrapAround } from "./get-wrap-around";
+import { NonEmptyArray } from "./non-empty-array";
 
 /**
  * Convenience function to get the next element in this array after some element
@@ -10,6 +11,12 @@ import { getWrapAround } from "./get-wrap-around";
  * @returns the next element in the array after the element, or wraps to the
  * beginning if that element is the last element.
  */
-export function getNextWrapAround<T>(array: T[], element: T): T | undefined {
-    return getWrapAround(array, element, 1);
+export function getNextWrapAround<T, A extends ReadonlyArray<T>>(
+    array: A,
+    element: T,
+): A extends Readonly<NonEmptyArray<T>>
+    ? T
+    : T | undefined {
+    // tslint:disable-next-line:no-any no-unsafe-any
+    return getWrapAround(array, element, 1) as any;
 }

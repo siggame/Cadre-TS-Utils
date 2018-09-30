@@ -18,12 +18,19 @@ const htmlAttributeEntityMap: { [key: string]: string } = {
  * well.
  * @returns `str` now escaped.
  */
-export function escapeHTML(str: string, escapeAttributes: boolean = false): string {
-    let htmlEscaped = String(str).replace(/[&<>]/g, (s) => htmlEntityMap[s]);
+export function escapeHTML(
+    str: string,
+    escapeAttributes: boolean = false,
+): string {
+    const htmlEscaped = String(str).replace(
+        /[&<>]/g,
+        (s) => htmlEntityMap[s],
+    );
 
-    if (escapeAttributes) {
-        htmlEscaped = htmlEscaped.replace(/["'\/]/g, (s) => htmlAttributeEntityMap[s]);
-    }
-
-    return htmlEscaped;
+    return escapeAttributes
+        ? htmlEscaped.replace(
+            /["'\/]/g,
+            (s) => htmlAttributeEntityMap[s],
+        )
+        : htmlEscaped;
 }

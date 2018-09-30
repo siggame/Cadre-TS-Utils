@@ -7,7 +7,7 @@ import { objectHasProperty } from "./object-has-property";
  * @param obj - The tree like object with nested properties to traverse.
  * @param keys - The list of keys to traverse, in order.
  * @returns Whatever value is at the end of the keys path.
- * @throws {Error} Throws an error when a given key is not found in the object
+ * @throws Throws an error when a given key is not found in the object
  * traversing.
  */
 export function traverse(obj: object, ...keys: string[]): unknown {
