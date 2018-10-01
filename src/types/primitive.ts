@@ -5,4 +5,4 @@ export type Primitive
     | boolean
     | string
     | number
-    | Function;
+    | Function; // tslint:disable-line:ban-types

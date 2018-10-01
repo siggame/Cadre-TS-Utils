@@ -1,2 +1,5 @@
 /** An object with all values being a certain type. */
-export interface ITypedObject<T = unknown> { [key: string]: T | undefined; }
+// tslint:disable-next-line:interface-name
+export interface TypedObject<T = unknown> {
+    [key: string]: T | undefined;
+}

@@ -1,6 +1,6 @@
 import { UnStringified } from "../string/un-stringified";
 import { unStringify } from "../string/un-stringify";
-import { ITypedObject } from "../types/typed-object";
+import { TypedObject } from "../types/typed-object";
 import { UnknownObject } from "../types/unknown-object";
 
 /**
@@ -10,7 +10,7 @@ import { UnknownObject } from "../types/unknown-object";
  * @param obj - The object to try to un-stringify its children.
  * @returns The un-stringified object (a new object, obj is untouched).
  */
-export function unStringifyObject<T extends Readonly<ITypedObject<string>>>(
+export function unStringifyObject<T extends Readonly<TypedObject<string>>>(
     obj: T,
 ): { [K in keyof T]: UnStringified } {
     const unStringified: UnknownObject = {};

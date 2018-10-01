@@ -1,4 +1,4 @@
-import { UnknownObject } from "../object";
+import { UnknownObject } from "../types/unknown-object";
 import { isObject } from "./is-object";
 
 /**
