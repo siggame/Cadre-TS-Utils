@@ -1,4 +1,4 @@
-import { UnknownObject } from "../object/unknown-object";
+import { UnknownObject } from "../types/unknown-object";
 import { IBaseGame } from "./base-game";
 import { IGameObjectReference } from "./base-game-object";
 import { IDeltaMergeConstants } from "./delta-merge";

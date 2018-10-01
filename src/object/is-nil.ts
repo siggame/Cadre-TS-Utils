@@ -1,4 +1,4 @@
-import { nil } from "./nil";
+import { nil } from "../types/nil";
 
 /**
  * Checks if a given thing is null or undefined.

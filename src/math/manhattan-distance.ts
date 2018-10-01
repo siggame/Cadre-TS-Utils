@@ -1,5 +1,5 @@
+import { IPoint } from "../types/point";
 import { makePoints } from "./make-points";
-import { IPoint } from "./point";
 
 /**
  * Gets the Manhattan distance between two points (x1, y1) and (x2, y2);

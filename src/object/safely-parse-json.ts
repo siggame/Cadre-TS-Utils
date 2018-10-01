@@ -1,4 +1,4 @@
-import { ParsedJSON } from "./parsed-json";
+import { Json } from "../types/json";
 
 /**
  * Safely parses a json string and returns the result, or an Error, instead of
@@ -7,9 +7,9 @@ import { ParsedJSON } from "./parsed-json";
  * @param json - The json still in string format.
  * @returns The parsed JSON, or an Error object if the JSON was malformed.
  */
-export function safelyParseJSON(json: string): ParsedJSON | Error {
+export function safelyParseJSON(json: string): Json | Error {
     try {
-        return JSON.parse(json) as ParsedJSON;
+        return JSON.parse(json) as Json;
     }
     catch (err) {
         return err as Error;

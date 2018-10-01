@@ -1,4 +1,4 @@
-import { UnknownObject } from "./unknown-object";
+import { UnknownObject } from "../types/unknown-object";
 
 /**
  * Checks if the given value is an object and not null.

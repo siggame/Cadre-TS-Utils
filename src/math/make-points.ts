@@ -1,5 +1,5 @@
 import { isObject } from "../object/is-object";
-import { IPoint } from "./point";
+import { IPoint } from "../types/point";
 
 /**
  * Make points from a loose collection of point like objects.

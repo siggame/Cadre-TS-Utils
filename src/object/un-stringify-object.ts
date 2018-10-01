@@ -1,7 +1,7 @@
 import { UnStringified } from "../string/un-stringified";
 import { unStringify } from "../string/un-stringify";
-import { ITypedObject } from "./typed-object";
-import { UnknownObject } from "./unknown-object";
+import { ITypedObject } from "../types/typed-object";
+import { UnknownObject } from "../types/unknown-object";
 
 /**
  * Accepts an object of any key/values, and tries to un-stringify each value,

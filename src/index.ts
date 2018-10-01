@@ -1,8 +1,8 @@
 export * from "./array";
-export * from "./function";
 export * from "./math";
 export * from "./object";
 export * from "./string";
+export * from "./types";
 
 import * as a from "./array";
 /** All the Array Utils, bundled up for you. */
