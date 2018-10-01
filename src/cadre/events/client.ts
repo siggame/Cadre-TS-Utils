@@ -50,6 +50,14 @@ export type PlayEvent = IEvent<"play", {
     /** The un-parsed url parm game settings string. */
     gameSettings: string;
 
+    /**
+     * If this client wants complete deltas instead of normal game deltas.
+     *
+     * This means instead of just the game delta, the data about why the delta
+     * occured is sent as well.
+     */
+    metaDeltas?: boolean;
+
     /** The name the of player the client is working on behalf of. */
     playerName: string;
 

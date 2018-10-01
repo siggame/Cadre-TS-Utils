@@ -124,6 +124,11 @@ export type FatalEvent = IEvent<"fatal", {
      * the game server to force disconnect it.
      */
     message?: string;
+
+    /**
+     * If the event occured because a client timed out.
+     */
+    timedOut?: string;
 }>;
 
 // ------------------------------------------------------------------------- \\
