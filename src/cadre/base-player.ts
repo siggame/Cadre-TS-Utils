@@ -1,6 +1,6 @@
 import { IBaseGameObject } from "./base-game-object";
 
-/** The base interface that a Player impliments in a game. */
+/** The base interface that a Player implements in a game. */
 export interface IBasePlayer extends IBaseGameObject {
     /** The name of the player. */
     name: string;

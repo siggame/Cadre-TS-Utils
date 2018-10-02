@@ -13,7 +13,7 @@ import { IEvent } from "./event";
  * This is always the final event in a normal game.
  */
 export type OverEvent = IEvent<"over", {
-    /** An absoulte URL to the gamelog as JSON. */
+    /** An absolute URL to the gamelog as JSON. */
     gamelogURL: string;
 
     /**
@@ -117,7 +117,7 @@ export type NamedEvent = IEvent<"named", string>;
  */
 export type FatalEvent = IEvent<"fatal", {
     /**
-     * Message about why the fatal event occured.
+     * Message about why the fatal event occurred.
      *
      * Most likely either the game server had a fatal exception it could not
      * recover from, or the client sent some seriously spooky data that caused
@@ -126,9 +126,9 @@ export type FatalEvent = IEvent<"fatal", {
     message?: string;
 
     /**
-     * If the event occured because a client timed out.
+     * If the event occurred because a client timed out.
      */
-    timedOut?: string;
+    timedOut?: boolean;
 }>;
 
 // ------------------------------------------------------------------------- \\

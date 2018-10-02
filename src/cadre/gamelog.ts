@@ -89,7 +89,7 @@ export interface IRanDeltaData {
     /** The data about what was requested be run. */
     run: RunEvent["data"];
 
-    /** A human reable string explaining why this run was invalid. */
+    /** A human readable string explaining why this run was invalid. */
     invalid?: string;
 
     /**
@@ -147,7 +147,7 @@ export interface IGamelogWinnerLoser {
     timedOut: boolean;
 }
 
-/** An eassier to deduce type for why a delta occured. */
+/** An eassier to deduce type for why a delta occurred. */
 export type DeltaReason = Partial<
     IDisconnectDeltaData &
     IRanDeltaData &

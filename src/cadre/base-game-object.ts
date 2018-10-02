@@ -9,7 +9,7 @@ export interface IGameObjectReference {
     id: string;
 }
 
-/** Common interface all game objects impliment. */
+/** Common interface all game objects implement. */
 export interface IBaseGameObject extends IGameObjectReference {
     /**
      * A string representing the top level Class that this game object is an

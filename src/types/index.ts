@@ -9,4 +9,5 @@ export * from "./point";
 export * from "./primitive";
 export * from "./shallow-immutable";
 export * from "./typed-object";
+export * from "./un-stringified";
 export * from "./unknown-object";

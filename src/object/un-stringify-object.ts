@@ -1,6 +1,6 @@
-import { UnStringified } from "../string/un-stringified";
 import { unStringify } from "../string/un-stringify";
 import { TypedObject } from "../types/typed-object";
+import { UnStringified } from "../types/un-stringified";
 import { UnknownObject } from "../types/unknown-object";
 
 /**

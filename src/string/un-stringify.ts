@@ -1,4 +1,4 @@
-import { UnStringified } from "./un-stringified";
+import { UnStringified } from "../types/un-stringified";
 
 /**
  * Tries to cast a string to a primitive value if it looks like one.
