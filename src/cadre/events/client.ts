@@ -30,7 +30,11 @@ export type RunEvent = IEvent<"run", {
     args: { [key: string]: unknown };
 }>;
 
-/** Sent from a client to the Lobby about what that client wants to play */
+/**
+ * Sent from a client to the Lobby about what that client wants to play.
+ *
+ * All optional keys can be null or undefined for an "unset" value.
+ */
 export type PlayEvent = IEvent<"play", {
     /**
      * The name (id) of the game to play. Assume this is an alias before using.
@@ -42,13 +46,13 @@ export type PlayEvent = IEvent<"play", {
      * If omitted it means they want to play in the first available session
      * of that game.
      */
-    requestedSession: string;
+    requestedSession?: string | null;
 
     /** The programming language this client is. */
     clientType: string;
 
     /** The un-parsed url parm game settings string. */
-    gameSettings: string;
+    gameSettings?: string | null;
 
     /**
      * If this client wants complete deltas instead of normal game deltas.
@@ -56,10 +60,10 @@ export type PlayEvent = IEvent<"play", {
      * This means instead of just the game delta, the data about why the delta
      * occured is sent as well.
      */
-    metaDeltas?: boolean;
+    metaDeltas?: boolean | null;
 
     /** The name the of player the client is working on behalf of. */
-    playerName: string;
+    playerName?: string | null;
 
     /**
      * The preferred player index this client wants to play as. By default if
@@ -70,20 +74,21 @@ export type PlayEvent = IEvent<"play", {
      *
      * **NOTE:** (0 is first, not 1, think zero-based array indexes)
      */
-    playerIndex?: number;
+    playerIndex?: number | null;
 
     /**
      * If the game server has authentication enabled, this is the password to
      * be allowed to play on said server.
      */
-    password?: string;
+    password?: string | null;
 
     /**
      * If set to true, then this client is treated as a spectator and will not
      * play, but will still be sent information about the game as it progresses.
+     *
      * Any other value will be treated as false (such as omitting the key).
      */
-    spectating?: boolean;
+    spectating?: boolean | null;
 }>;
 
 /**
