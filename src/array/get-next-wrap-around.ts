@@ -1,5 +1,5 @@
+import { NonEmptyArray } from "../types/non-empty-array";
 import { getWrapAround } from "./get-wrap-around";
-import { NonEmptyArray } from "./non-empty-array";
 
 /**
  * Convenience function to get the next element in this array after some element

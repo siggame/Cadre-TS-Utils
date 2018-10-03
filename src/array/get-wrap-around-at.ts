@@ -1,5 +1,5 @@
 import { wrapAround } from "../math/wrap-around";
-import { NonEmptyArray } from "./non-empty-array";
+import { NonEmptyArray } from "../types/non-empty-array";
 
 /**
  * Gets an element in the array wrapping around (both ways), so -1 would be the
