@@ -4,7 +4,7 @@
  */
 
 import { IDeltaMergeConstants } from "../delta-merge";
-import { IDelta } from "../gamelog";
+import { Delta } from "../deltas";
 import { IEvent } from "./event";
 
 /**
@@ -94,16 +94,16 @@ export type RanEvent = IEvent<"ran", unknown>;
 
 /**
  * Triggers after serialized game logic finished and the game state changed
- * in some way. The data of the delta is a partial of the game in delta format.
+ * in some way. The partial game delta is sent, in delta merge format.
  */
-export type DeltaEvent = IEvent<"delta", IDelta["game"]>;
+export type DeltaEvent = IEvent<"delta", Delta["game"]>;
 
 /**
  * The same as a normal delta event, but the data is the entire delta, instead
  * of just the game state. Intended for spectators who want the entire
  * gamelog instead just game data.
  */
-export type MetaDeltaEvent = IEvent<"meta-delta", IDelta>;
+export type MetaDeltaEvent = IEvent<"meta-delta", Delta>;
 
 /**
  * Sent from the game server to a single client once a game alias has been
