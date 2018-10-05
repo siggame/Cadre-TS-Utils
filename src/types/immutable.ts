@@ -7,7 +7,9 @@ export type Immutable<T> = T extends Primitive
         ? ImmutableArray<U>
         : T extends Map<infer K, infer V>
             ? ImmutableMap<K, V>
-            : ImmutableObject<T>;
+            : T extends object
+                ? ImmutableObject<T>
+                : T; // Should only be unknown
 
 // tslint:disable:interface-name
 /** An Array where itself, and all it's children, and so on, are readonly. */

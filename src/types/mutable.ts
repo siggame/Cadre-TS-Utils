@@ -19,7 +19,9 @@ export type Mutable<T> = T extends Primitive
         ? MutableArray<U>
         : T extends Map<infer K, infer V>
             ? MutableMap<K, V>
-            : MutableObject<T>;
+            : T extends object
+                ? MutableObject<T>
+                : T; // Should only be unknown
 
 // tslint:disable:interface-name
 /** An Array where itself, and all it's children, and so on, are writeable. */
