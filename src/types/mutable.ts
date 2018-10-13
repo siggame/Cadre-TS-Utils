@@ -13,13 +13,15 @@ import { Primitive } from "./primitive";
  * The opposite of `Immutable`.
  * @see Immutable
  */
-export type Mutable<T> = T extends Primitive
-    ? T
-    : T extends Array<infer U>
-        ? MutableArray<U>
-        : T extends Map<infer K, infer V>
-            ? MutableMap<K, V>
-            : MutableObject<T>;
+export type Mutable<T> =
+    T extends Primitive ? T :
+    // T extends MutableObject<infer IT> ? T : // already mutable
+    T extends MutableArray<infer IE> ? T : //         ^
+    T extends MutableMap<infer IK, infer IV> ? T : // ^
+    T extends Array<infer E> ? MutableArray<E> :
+    T extends Map<infer K, infer V> ? MutableMap<K, V> :
+    T extends object ? MutableObject<T> :
+    T; // this should only be `unknown` or `any`.
 
 // tslint:disable:interface-name
 /** An Array where itself, and all it's children, and so on, are writeable. */
