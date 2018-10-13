@@ -6,6 +6,7 @@ export * from "./json";
 export * from "./mutable";
 export * from "./nil";
 export * from "./non-empty-array";
+export * from "./omit";
 export * from "./point";
 export * from "./primitive";
 export * from "./shallow-immutable";
