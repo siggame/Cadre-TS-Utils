@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Checks if an array has at least 1 item, and types it as such.
+ *
+ * @param array - The array to check if it has at least 1 element.
+ * @returns True if not empty, otherwise false when empty.
+ */
+function arrayHasElements(array) {
+    return array.length > 0;
+}
+exports.arrayHasElements = arrayHasElements;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXJyYXktaGFzLWVsZW1lbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2FycmF5L2FycmF5LWhhcy1lbGVtZW50cy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBOzs7OztHQUtHO0FBQ0gsU0FBZ0IsZ0JBQWdCLENBQzVCLEtBQXVCO0lBRXZCLE9BQU8sS0FBSyxDQUFDLE1BQU0sR0FBRyxDQUFDLENBQUM7QUFDNUIsQ0FBQztBQUpELDRDQUlDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTm9uRW1wdHlBcnJheSB9IGZyb20gXCIuLi90eXBlcy9ub24tZW1wdHktYXJyYXlcIjtcblxuLyoqXG4gKiBDaGVja3MgaWYgYW4gYXJyYXkgaGFzIGF0IGxlYXN0IDEgaXRlbSwgYW5kIHR5cGVzIGl0IGFzIHN1Y2guXG4gKlxuICogQHBhcmFtIGFycmF5IC0gVGhlIGFycmF5IHRvIGNoZWNrIGlmIGl0IGhhcyBhdCBsZWFzdCAxIGVsZW1lbnQuXG4gKiBAcmV0dXJucyBUcnVlIGlmIG5vdCBlbXB0eSwgb3RoZXJ3aXNlIGZhbHNlIHdoZW4gZW1wdHkuXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBhcnJheUhhc0VsZW1lbnRzPFQ+KFxuICAgIGFycmF5OiBSZWFkb25seUFycmF5PFQ+LFxuKTogYXJyYXkgaXMgTm9uRW1wdHlBcnJheTxUPiB7XG4gICAgcmV0dXJuIGFycmF5Lmxlbmd0aCA+IDA7XG59XG4iXX0=

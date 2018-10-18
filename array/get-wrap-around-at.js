@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const wrap_around_1 = require("../math/wrap-around");
+/**
+ * Gets an element in the array wrapping around (both ways), so -1 would be the
+ * last element, and length would warp to 0.
+ *
+ * @param array - The array to use to get items from.
+ * @param index - Index to get in this array, if it is out of bounds
+ * (index < 0 or index >= this.length), we will "wrap" that index around to be
+ * in range.
+ * @returns Element at the index, wrapped around when out of range.
+ * If the array is empty undefined is returned.
+ */
+function getWrapAroundAt(array, index) {
+    // tslint:disable-next-line:no-any no-unsafe-any
+    return (array[wrap_around_1.wrapAround(index, array.length)]);
+}
+exports.getWrapAroundAt = getWrapAroundAt;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LXdyYXAtYXJvdW5kLWF0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2FycmF5L2dldC13cmFwLWFyb3VuZC1hdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFpRDtBQUdqRDs7Ozs7Ozs7OztHQVVHO0FBQ0gsU0FBZ0IsZUFBZSxDQUMzQixLQUFRLEVBQ1IsS0FBYTtJQUliLGdEQUFnRDtJQUNoRCxPQUFPLENBQUMsS0FBSyxDQUFDLHdCQUFVLENBQUMsS0FBSyxFQUFFLEtBQUssQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFRLENBQUM7QUFDM0QsQ0FBQztBQVJELDBDQVFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgd3JhcEFyb3VuZCB9IGZyb20gXCIuLi9tYXRoL3dyYXAtYXJvdW5kXCI7XG5pbXBvcnQgeyBOb25FbXB0eUFycmF5IH0gZnJvbSBcIi4uL3R5cGVzL25vbi1lbXB0eS1hcnJheVwiO1xuXG4vKipcbiAqIEdldHMgYW4gZWxlbWVudCBpbiB0aGUgYXJyYXkgd3JhcHBpbmcgYXJvdW5kIChib3RoIHdheXMpLCBzbyAtMSB3b3VsZCBiZSB0aGVcbiAqIGxhc3QgZWxlbWVudCwgYW5kIGxlbmd0aCB3b3VsZCB3YXJwIHRvIDAuXG4gKlxuICogQHBhcmFtIGFycmF5IC0gVGhlIGFycmF5IHRvIHVzZSB0byBnZXQgaXRlbXMgZnJvbS5cbiAqIEBwYXJhbSBpbmRleCAtIEluZGV4IHRvIGdldCBpbiB0aGlzIGFycmF5LCBpZiBpdCBpcyBvdXQgb2YgYm91bmRzXG4gKiAoaW5kZXggPCAwIG9yIGluZGV4ID49IHRoaXMubGVuZ3RoKSwgd2Ugd2lsbCBcIndyYXBcIiB0aGF0IGluZGV4IGFyb3VuZCB0byBiZVxuICogaW4gcmFuZ2UuXG4gKiBAcmV0dXJucyBFbGVtZW50IGF0IHRoZSBpbmRleCwgd3JhcHBlZCBhcm91bmQgd2hlbiBvdXQgb2YgcmFuZ2UuXG4gKiBJZiB0aGUgYXJyYXkgaXMgZW1wdHkgdW5kZWZpbmVkIGlzIHJldHVybmVkLlxuICovXG5leHBvcnQgZnVuY3Rpb24gZ2V0V3JhcEFyb3VuZEF0PFQsIEEgZXh0ZW5kcyBSZWFkb25seUFycmF5PFQ+PihcbiAgICBhcnJheTogQSxcbiAgICBpbmRleDogbnVtYmVyLFxuKTogQSBleHRlbmRzIFJlYWRvbmx5PE5vbkVtcHR5QXJyYXk8VD4+XG4gICAgPyBUXG4gICAgOiBUIHwgdW5kZWZpbmVkIHtcbiAgICAvLyB0c2xpbnQ6ZGlzYWJsZS1uZXh0LWxpbmU6bm8tYW55IG5vLXVuc2FmZS1hbnlcbiAgICByZXR1cm4gKGFycmF5W3dyYXBBcm91bmQoaW5kZXgsIGFycmF5Lmxlbmd0aCldKSBhcyBhbnk7XG59XG4iXX0=

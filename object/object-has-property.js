@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Checks if an object has a given property.
+ *
+ * @param obj - The object to check in.
+ * @param property - The name of the property (key) to check for.
+ * @returns True if the property is present in the object, false otherwise.
+ */
+function objectHasProperty(obj, property) {
+    return Boolean(obj)
+        // tslint:disable-next-line:no-unsafe-any
+        && Object.prototype.hasOwnProperty.call(obj, property);
+}
+exports.objectHasProperty = objectHasProperty;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoib2JqZWN0LWhhcy1wcm9wZXJ0eS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9vYmplY3Qvb2JqZWN0LWhhcy1wcm9wZXJ0eS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOzs7Ozs7R0FNRztBQUNILFNBQWdCLGlCQUFpQixDQUM3QixHQUFNLEVBQ04sUUFBVztJQUVYLE9BQU8sT0FBTyxDQUFDLEdBQUcsQ0FBQztRQUNmLHlDQUF5QztXQUN0QyxNQUFNLENBQUMsU0FBUyxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsR0FBRyxFQUFFLFFBQVEsQ0FBQyxDQUFDO0FBQy9ELENBQUM7QUFQRCw4Q0FPQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQ2hlY2tzIGlmIGFuIG9iamVjdCBoYXMgYSBnaXZlbiBwcm9wZXJ0eS5cbiAqXG4gKiBAcGFyYW0gb2JqIC0gVGhlIG9iamVjdCB0byBjaGVjayBpbi5cbiAqIEBwYXJhbSBwcm9wZXJ0eSAtIFRoZSBuYW1lIG9mIHRoZSBwcm9wZXJ0eSAoa2V5KSB0byBjaGVjayBmb3IuXG4gKiBAcmV0dXJucyBUcnVlIGlmIHRoZSBwcm9wZXJ0eSBpcyBwcmVzZW50IGluIHRoZSBvYmplY3QsIGZhbHNlIG90aGVyd2lzZS5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIG9iamVjdEhhc1Byb3BlcnR5PFQgZXh0ZW5kcyBvYmplY3QsIFAgZXh0ZW5kcyBzdHJpbmcgfCBudW1iZXI+KFxuICAgIG9iajogVCxcbiAgICBwcm9wZXJ0eTogUCxcbik6IG9iaiBpcyBUICYgKHsgW0sgaW4gUF0tPzogdW5rbm93biB9KSB7XG4gICAgcmV0dXJuIEJvb2xlYW4ob2JqKVxuICAgICAgICAvLyB0c2xpbnQ6ZGlzYWJsZS1uZXh0LWxpbmU6bm8tdW5zYWZlLWFueVxuICAgICAgICAmJiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBwcm9wZXJ0eSk7XG59XG4iXX0=
