@@ -8,7 +8,7 @@
 export function objectHasProperty<T extends object, P extends string | number>(
     obj: T,
     property: P,
-): obj is T & { [K in P]: unknown } {
+): obj is T & ({ [K in P]-?: unknown }) {
     return Boolean(obj)
         // tslint:disable-next-line:no-unsafe-any
         && Object.prototype.hasOwnProperty.call(obj, property);

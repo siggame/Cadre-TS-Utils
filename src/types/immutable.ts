@@ -3,11 +3,9 @@ import { Primitive } from "./primitive";
 /** Marks any type as immutable, and deep recursive into containers too. */
 export type Immutable<T> =
     T extends Primitive ? T :
-    // T extends ImmutableObject<infer IT> ? T : // already immutable
-    T extends ImmutableArray<infer IE> ? T : //         ^
-    T extends ImmutableMap<infer IK, infer IV> ? T : // ^
     T extends Array<infer U> ? ImmutableArray<U> :
     T extends Map<infer K, infer V> ? ImmutableMap<K, V> :
+    T extends ImmutableObject<infer IO> ? T :
     T extends object ? ImmutableObject<T> :
     Readonly<T>; // this should only be `unknown`.
 

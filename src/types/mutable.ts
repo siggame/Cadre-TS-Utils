@@ -15,11 +15,9 @@ import { Primitive } from "./primitive";
  */
 export type Mutable<T> =
     T extends Primitive ? T :
-    // T extends MutableObject<infer IT> ? T : // already mutable
-    T extends MutableArray<infer IE> ? T : //         ^
-    T extends MutableMap<infer IK, infer IV> ? T : // ^
     T extends Array<infer E> ? MutableArray<E> :
     T extends Map<infer K, infer V> ? MutableMap<K, V> :
+    T extends MutableObject<infer MO> ? T :
     T extends object ? MutableObject<T> :
     T; // this should only be `unknown` or `any`.
 
