@@ -7,7 +7,7 @@
     "url": "git://github.com/siggame/Cadre-TS-Utils"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -40,6 +40,7 @@
     "docs": "shx rm -rf temp && ts-node scripts/docs.ts temp/ && cp tsconfig.json temp/tsconfig.json && typedoc temp/ --mode modules --out temp/docs",
     "rebuild": "npm run clean && npm run build",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force"
+    "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force",
+    "pre-deploy": "npm run build && shx cp ./{package.json,README.json,tslint.json,LICENSE} ./dist/"
   }
 }
