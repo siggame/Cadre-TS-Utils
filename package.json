@@ -1,6 +1,6 @@
 {
   "name": "@cadre/ts-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility functions, settings, and setups for Cadre TypeScript projects.",
   "repository": {
     "type": "git",
@@ -41,6 +41,9 @@
     "rebuild": "npm run clean && npm run build",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force",
-    "pre-deploy": "npm run build && shx cp ./{package.json,README.json,tslint.json,LICENSE} ./dist/"
+    "pre-release": "npm run build && shx cp ./{package.json,README.json,tslint.json,LICENSE} ./dist/ && npm pack dist/"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

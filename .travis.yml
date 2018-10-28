@@ -13,10 +13,26 @@ before_deploy:
   - touch temp/docs/.nojekyll
 
 deploy:
-  provider: pages
-  skip-cleanup: true
-  verbose: true
-  local-dir: temp/docs/
-  github-token: $GH_TOKEN
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    verbose: true
+    local-dir: temp/docs/
+    github-token: $GH_TOKEN
+    on:
+      branch: master
+
+  - provider: releases
+    api_key: $GH_TOKEN
+    script: npm run pre-release
+    file_glob: true
+    file: "cadre-ts-utils-*.tgz"
+    skip_cleanup: true
+    on:
+      tags: true
+
+  - provider: npm
+    skip_cleanup: true
+    email: "jacob.t.fischer@gmail.com"
+    api_key: $NPM_TOKEN
+    on:
+      tags: true
