@@ -11,7 +11,12 @@ if you find its utility functions useful.
 
 All code is exported on a per file basis to encourage [tree shaking].
 
+## Documentation
+
+Docs for all functions are available on [GitHub][docs].
+
 [Cadre]: https://github.com/siggame/Cadre
 [TypeScript]: https://www.typescriptlang.org/
 [tslint]: https://palantir.github.io/tslint/
 [tree shaking]: https://webpack.js.org/guides/tree-shaking/
+[docs]: http://siggame.github.io/Cadre-TS-Utils
