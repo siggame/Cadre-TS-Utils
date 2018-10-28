@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog]
 and this project adheres to [Semantic Versioning].
 
+## [1.0.3] - 2018-28-10
+### Fixed
+- Remove built docs from published package structure
+
 ## [1.0.2] - 2018-28-10
 ### Fixed
 - Deployed package structure corrected
@@ -17,6 +21,8 @@ and this project adheres to [Semantic Versioning].
 - Initial release
 
 [1.0.1]: https://github.com/siggame/Cadre-TS-Utils/releases/tag/v1.0.1
+[1.0.2]: https://github.com/siggame/Cadre-TS-Utils/releases/tag/v1.0.2
+[1.0.3]: https://github.com/siggame/Cadre-TS-Utils/releases/tag/v1.0.3
 
 [Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: http://semver.org/spec/v2.0.0.html

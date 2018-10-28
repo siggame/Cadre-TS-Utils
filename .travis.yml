@@ -23,16 +23,17 @@ deploy:
 
   - provider: releases
     api_key: $GH_TOKEN
-    script: npm run pre:pack
+    skip_cleanup: true
+    script: npm run pre:pack && npm run pack
     file_glob: true
     file: "cadre-ts-utils-*.tgz"
-    skip_cleanup: true
     on:
       tags: true
 
   - provider: npm
+    api_key: $NPM_TOKEN
+    script: npm run pre:pack
     skip_cleanup: true
     email: "jacob.t.fischer@gmail.com"
-    api_key: $NPM_TOKEN
     on:
       tags: true

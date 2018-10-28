@@ -12,3 +12,4 @@ tsconfig.json
 dist/
 scripts/
 src/
+temp/
