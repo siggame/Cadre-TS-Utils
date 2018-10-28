@@ -11,6 +11,9 @@ before_deploy:
   - npm run docs
   # file to tell GitHub pages not to try to run jekyll stuff (can break urls)
   - touch temp/docs/.nojekyll
+  # prepare directory for npm and gh-pages deploy
+  - npm run pre:pack
+  - npm run pack
 
 deploy:
   - provider: pages
@@ -24,7 +27,6 @@ deploy:
   - provider: releases
     api_key: $GH_TOKEN
     skip_cleanup: true
-    script: npm run pre:pack && npm run pack
     file_glob: true
     file: "cadre-ts-utils-*.tgz"
     on:
@@ -32,7 +34,6 @@ deploy:
 
   - provider: npm
     api_key: $NPM_TOKEN
-    script: npm run pre:pack
     skip_cleanup: true
     email: "jacob.t.fischer@gmail.com"
     on:
