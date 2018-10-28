@@ -13,7 +13,7 @@ before_deploy:
   - touch temp/docs/.nojekyll
   # prepare directory for npm and gh-pages deploy
   - npm run pre:pack
-  - npm run pack
+  - npm pack
 
 deploy:
   - provider: pages
