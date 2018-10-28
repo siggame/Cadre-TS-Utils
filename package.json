@@ -46,7 +46,7 @@
     "rebuild": "npm run clean && npm run build",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force",
-    "pre:pack": "npm run build && shx cp -R ./dist/* ./ && npm pack"
+    "pre:pack": "npm run build && shx cp -R ./dist/* ./"
   },
   "publishConfig": {
     "access": "public"
