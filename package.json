@@ -1,7 +1,12 @@
 {
   "name": "@cadre/ts-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility functions, settings, and setups for Cadre TypeScript projects.",
+  "keywords": [
+    "cadre",
+    "typescript",
+    "utils"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/siggame/Cadre-TS-Utils"

@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog]
 and this project adheres to [Semantic Versioning].
 
+## [1.0.2] - 2018-28-10
+### Fixed
+- Deployed package structure corrected
+
 ## [1.0.1] - 2018-27-10
 ### Added
 - Travis CI deployment

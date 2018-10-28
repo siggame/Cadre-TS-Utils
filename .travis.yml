@@ -23,7 +23,7 @@ deploy:
 
   - provider: releases
     api_key: $GH_TOKEN
-    script: npm run pre-release
+    script: npm run pre:pack
     file_glob: true
     file: "cadre-ts-utils-*.tgz"
     skip_cleanup: true

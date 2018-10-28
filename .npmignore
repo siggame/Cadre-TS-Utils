@@ -1,0 +1,14 @@
+.gitattributes
+.gitignore
+.npmignore
+.huskyrc.json
+.nvmrc
+.travis.yml
+CHANGELOG.md
+tsconfig.json
+*.tgz
+
+.vscode/
+dist/
+scripts/
+src/

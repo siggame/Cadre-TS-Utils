@@ -13,7 +13,7 @@ All code is exported on a per file basis to encourage [tree shaking].
 
 ## Documentation
 
-Docs for all functions are available on [GitHub][docs].
+Docs for all exported functions, types, etc are available on [GitHub][docs].
 
 [Cadre]: https://github.com/siggame/Cadre
 [TypeScript]: https://www.typescriptlang.org/
