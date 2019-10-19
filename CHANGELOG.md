@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog]
 and this project adheres to [Semantic Versioning].
 
+## [1.1.0] - 2019-18-10
+### Added
+- Add `gamelogVersion` field on most recent Gamelog types.
+
+### Changed
+- `IGamelog` interface updated to different version of Cadre gamelogs that could be encountered.
+
 ## [1.0.5] - 2018-28-10
 ### Fixed
 - First fully working publication with no erroneous artifacts
