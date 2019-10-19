@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning].
 ### Fixed
 - First fully working publication with no erroneous artifacts
 
+[1.1.0]: https://github.com/siggame/Cadre-TS-Utils/releases/tag/v1.1.0
 [1.0.5]: https://github.com/siggame/Cadre-TS-Utils/releases/tag/v1.0.5
 
 [Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
