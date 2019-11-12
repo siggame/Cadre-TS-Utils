@@ -79,6 +79,9 @@ export type LobbiedEvent = IEvent<"lobbied", {
     /** The actual name (id) of the game you will be playing. */
     gameName: string;
 
+    /** The version of the game being ran on the server. */
+    gameVersion: string;
+
     /** The game session (id) of the game you will be playing. */
     gameSession: string;
 
