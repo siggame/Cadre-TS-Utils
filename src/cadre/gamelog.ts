@@ -61,10 +61,11 @@ export interface IGamelogV1 extends IBaseGamelog {
 
 /** The shape of gamelogs once version numbers were always recorded. */
 export interface IGamelogV2 extends IGamelogV1 {
-    /**
-     * The version of this gamelog, recorded in SemVer.
-     */
+    /** The version of this gamelog, recorded in SemVer. */
     gamelogVersion: string;
+
+    /** The version of the game, recorded as a hash */
+    gameVersion: string;
 }
 
 /** The shape of a gamelog, both being built and if read from memory. */
