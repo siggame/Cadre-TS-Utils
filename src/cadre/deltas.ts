@@ -1,20 +1,21 @@
 import { UnknownObject } from "../types/unknown-object";
-import { IBaseGame } from "./base-game";
-import { IGameObjectReference } from "./base-game-object";
+import { BaseGame } from "./base-game";
+import { GameObjectReference } from "./base-game-object";
 import { RunEvent } from "./events/client";
 import { OrderEvent } from "./events/server";
 
 /**
- * The base shape all deltas impliment.
+ * The base shape all deltas implement.
  */
-export interface IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: string;
 
     /**
      * Meta data about why the delta occurred, such as data sent to the server
-     * from a game client
+     * from a game client.
      */
+    // eslint-disable-next-line @typescript-eslint/ban-types
     data?: object;
 
     /**
@@ -22,9 +23,9 @@ export interface IBaseDelta {
      *
      * A game delta is probably the most complex part of understanding
      * communication in the cadre framework. Refer to these docs for more help:
-     * https://github.com/siggame/Cadre/blob/master/gamelog-format.md#deltas
+     * https://github.com/siggame/Cadre/blob/master/gamelog-format.md#deltas.
      */
-    game: Partial<IBaseGame & UnknownObject>;
+    game: Partial<BaseGame & UnknownObject>;
 }
 
 /**
@@ -32,8 +33,8 @@ export interface IBaseDelta {
  *
  * An order delta should follow.
  */
-export interface IStartDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface StartDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "start";
 
     /** No data for start deltas. */
@@ -45,14 +46,14 @@ export interface IStartDelta extends IBaseDelta {
  *
  * NOTE: this means an order was sent, not finished.
  */
-export interface IOrderDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface OrderDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "order";
 
-    /** Data about why the order occured. */
+    /** Data about why the order occurred. */
     data: {
         /** The player that was ordered. */
-        player: IGameObjectReference;
+        player: GameObjectReference;
 
         /** The order data they were sent. */
         order: OrderEvent["data"];
@@ -60,14 +61,14 @@ export interface IOrderDelta extends IBaseDelta {
 }
 
 /** Delta about what game logic got ran. */
-export interface IRanDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface RanDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "ran";
 
-    /** Data about why the run/ran occured. */
+    /** Data about why the run/ran occurred. */
     data: {
         /** The player that requested this game logic be ran. */
-        player: IGameObjectReference;
+        player: GameObjectReference;
 
         /** The data about what was requested be run. */
         run: RunEvent["data"];
@@ -84,14 +85,14 @@ export interface IRanDelta extends IBaseDelta {
 }
 
 /** Data bout a player finishing an order. */
-export interface IFinishedDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface FinishedDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "finished";
 
     /** Data about what order they finished. */
     data: {
         /** The player that said they finished an order. */
-        player: IGameObjectReference;
+        player: GameObjectReference;
 
         /** The data about the order they finished. */
         order: OrderEvent["data"];
@@ -112,14 +113,14 @@ export interface IFinishedDelta extends IBaseDelta {
  *
  * This does not occur if both AIs play a game correctly.
  */
-export interface IDisconnectDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface DisconnectDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "disconnect";
 
-    /** Data about why the disconnect occured. */
+    /** Data about why the disconnect occurred. */
     data: {
-        /** The player that disconnected */
-        player: IGameObjectReference;
+        /** The player that disconnected. */
+        player: GameObjectReference;
 
         /**
          * If they disconnected because they timed out, and the game server was
@@ -130,8 +131,8 @@ export interface IDisconnectDelta extends IBaseDelta {
 }
 
 /** Always the last delta in a game, occurs when the game is over. */
-export interface IOverDelta extends IBaseDelta {
-    /** The type of delta, or reason it occurred */
+export interface OverDelta extends BaseDelta {
+    /** The type of delta, or reason it occurred. */
     type: "over";
 
     /** No data for over deltas. */
@@ -139,10 +140,10 @@ export interface IOverDelta extends IBaseDelta {
 }
 
 /** A Delta in the game. Each delta is expected to be one of these types. */
-export type Delta
-    = IStartDelta
-    | IOrderDelta
-    | IRanDelta
-    | IFinishedDelta
-    | IDisconnectDelta
-    | IOverDelta;
+export type Delta =
+    | StartDelta
+    | OrderDelta
+    | RanDelta
+    | FinishedDelta
+    | DisconnectDelta
+    | OverDelta;

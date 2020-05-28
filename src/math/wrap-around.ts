@@ -7,5 +7,5 @@
  * @returns The index "wrapped around" 0 to length. 0 <= result < length.
  */
 export function wrapAround(index: number, length: number): number {
-    return (index % length + length) % length;
+    return ((index % length) + length) % length;
 }

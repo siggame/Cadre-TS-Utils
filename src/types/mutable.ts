@@ -11,28 +11,26 @@ import { Primitive } from "./primitive";
  * containers too.
  *
  * The opposite of `Immutable`.
+ *
  * @see Immutable
  */
-export type Mutable<T> =
-    T extends Primitive ? T :
-    T extends Array<infer E> ? MutableArray<E> :
-    T extends Map<infer K, infer V> ? MutableMap<K, V> :
-    T extends object ? MutableObject<T> :
-    T; // this should only be `unknown` or `any`.
+export type Mutable<T> = T extends Primitive
+    ? T
+    : T extends Array<infer E>
+    ? MutableArray<E>
+    : T extends Map<infer K, infer V>
+    ? MutableMap<K, V>
+    : T extends object // eslint-disable-line @typescript-eslint/ban-types
+    ? MutableObject<T>
+    : T; // this should only be `unknown` or `any`.
 
-// tslint:disable:interface-name
 /** An Array where itself, and all it's children, and so on, are writeable. */
-export interface MutableArray<T> extends Array<
-    Mutable<T>
-> {}
+export type MutableArray<T> = Array<Mutable<T>>;
 
 /** A Map where itself, and all it's children, and so on, are writeable. */
-export interface MutableMap<K, V> extends Map<
-    Mutable<K>,
-    Mutable<V>
-> {}
+export type MutableMap<K, V> = Map<Mutable<K>, Mutable<V>>;
 
 /** An object where itself, and all it's children, and so on, are writeable. */
 export type MutableObject<T> = {
-  -readonly [K in keyof T]: Mutable<T[K]>;
+    -readonly [K in keyof T]: Mutable<T[K]>;
 };

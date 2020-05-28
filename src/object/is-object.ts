@@ -7,5 +7,5 @@ import { UnknownObject } from "../types/unknown-object";
  * @returns True if it is an object and not null, false otherwise.
  */
 export function isObject<T>(obj: unknown): obj is T & UnknownObject {
-    return (typeof obj === "object" && obj !== null);
+    return typeof obj === "object" && obj !== null;
 }

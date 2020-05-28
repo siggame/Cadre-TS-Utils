@@ -1,22 +1,22 @@
-import { IPoint } from "../types/point";
+import { Point } from "../types/point";
 import { makePoints } from "./make-points";
 
 /**
  * Gets the Manhattan distance between two points (x1, y1) and (x2, y2);
  * the distance between two points measured along axes at right angles.
  *
- * @param point1 - { x, y } point 1
- * @param point2 - { x, y } point 2
+ * @param point1 - The { x, y } point 1.
+ * @param point2 - The { x, y } point 2.
  * @returns The manhattan distance between the two points.
  */
-export function manhattanDistance(point1: IPoint, point2: IPoint): number;
+export function manhattanDistance(point1: Point, point2: Point): number;
 
 /**
  * Gets the Manhattan distance between two points (x1, y1) and (x2, y2);
  * the distance between two points measured along axes at right angles.
  *
- * @param point1 - [ x, y ] point 1
- * @param point2 - [ x, y ] point 2
+ * @param point1 - The [ x, y ] point 1.
+ * @param point2 - The [ x, y ] point 2.
  * @returns The manhattan distance between the two points.
  */
 export function manhattanDistance(
@@ -28,10 +28,10 @@ export function manhattanDistance(
  * Gets the Manhattan distance between two points (x1, y1) and (x2, y2);
  * the distance between two points measured along axes at right angles.
  *
- * @param x1 - point 1's x
- * @param y1 - point 1's y
- * @param x2 - point 2's x
- * @param y2 - point 2's y
+ * @param x1 - Point 1's x.
+ * @param y1 - Point 1's y.
+ * @param x2 - Point 2's x.
+ * @param y2 - Point 2's y.
  * @returns The manhattan distance between the two points.
  */
 export function manhattanDistance(

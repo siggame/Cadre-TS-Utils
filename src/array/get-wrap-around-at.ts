@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { wrapAround } from "../math/wrap-around";
 import { NonEmptyArray } from "../types/non-empty-array";
 
@@ -15,9 +16,7 @@ import { NonEmptyArray } from "../types/non-empty-array";
 export function getWrapAroundAt<T, A extends ReadonlyArray<T>>(
     array: A,
     index: number,
-): A extends Readonly<NonEmptyArray<T>>
-    ? T
-    : T | undefined {
-    // tslint:disable-next-line:no-any no-unsafe-any
-    return (array[wrapAround(index, array.length)]) as any;
+): A extends Readonly<NonEmptyArray<T>> ? T : T | undefined {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return array[wrapAround(index, array.length)] as any;
 }

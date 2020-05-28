@@ -1,6 +1,6 @@
 {
   "name": "@cadre/ts-utils",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Utility functions, settings, and setups for Cadre TypeScript projects.",
   "keywords": [
     "cadre",
@@ -16,23 +16,26 @@
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
-  "dependencies": {
-    "tslint-eslint-rules": "5.4.0",
-    "tslint-microsoft-contrib": "5.2.1",
-    "tslint-no-math-random": "1.0.1"
-  },
   "devDependencies": {
-    "@types/fs-extra": "8.0.1",
-    "@types/node": "12.12.7",
-    "fs-extra": "8.1.0",
-    "husky": "1.1.2",
+    "@types/eslint": "6.8.1",
+    "@types/fs-extra": "9.0.1",
+    "@types/node": "14.0.5",
+    "@typescript-eslint/eslint-plugin": "3.0.1",
+    "eslint": "7.1.0",
+    "eslint-config-jacobfischer": "github:JacobFischer/eslint-config.git#d2c31103640a50530ff682f68253c65128d50ff9",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-import-order-alphabetical": "1.0.0",
+    "eslint-plugin-jsdoc": "25.4.3",
+    "eslint-plugin-prettier": "3.1.3",
+    "fs-extra": "9.0.0",
+    "husky": "4.2.5",
+    "prettier": "2.0.5",
     "shx": "0.3.2",
-    "ts-node": "8.5.0",
-    "tslint": "5.11.0",
-    "typedoc": "0.15.0",
-    "typedoc-plugin-external-module-name": "2.1.0",
-    "typedoc-plugin-internal-external": "2.0.2",
-    "typescript": "3.7.2"
+    "ts-node": "8.10.1",
+    "typedoc": "0.17.7",
+    "typedoc-plugin-external-module-name": "3.1.0",
+    "typedoc-plugin-internal-external": "2.1.1",
+    "typescript": "3.9.3"
   },
   "engines": {
     "node": ">=9.0.0"
@@ -43,13 +46,20 @@
     "build:test": "tsc --noEmit",
     "build:watch": "tsc --watch",
     "clean": "shx rm -rf dist docs",
-    "docs": "shx rm -rf temp && ts-node scripts/docs.ts temp/ && cp tsconfig.json temp/tsconfig.json && typedoc temp/ --mode modules --out temp/docs",
+    "lint": "eslint ./ --max-warnings=0",
+    "prettier:base": "prettier **/*.{js,ts}",
+    "prettier": "npm run prettier:base -- --write",
+    "prettier:test": "npm run prettier:base -- --check",
     "rebuild": "npm run clean && npm run build",
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "lint:fix": "tslint --config tslint.json --project tsconfig.json --fix --force",
+    "docs": "shx rm -rf temp && ts-node scripts/docs.ts temp/ && cp tsconfig.json temp/tsconfig.json && typedoc temp/ --mode modules --out temp/docs",
     "pre:pack": "npm run build && shx cp -R ./dist/* ./"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }

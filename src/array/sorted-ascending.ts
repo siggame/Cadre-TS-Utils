@@ -1,4 +1,5 @@
-// tslint:disable:no-any no-unsafe-any
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // any is allowed for comparison usage (>, <, ===)
 
 /**

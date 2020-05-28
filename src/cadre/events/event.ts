@@ -1,14 +1,10 @@
-
 /**
  * The basic event structure clients and the server send to each other.
  *
  * Each message must implement this interface for communication to be
  * successful.
  */
-export interface IEvent<
-    E extends string,
-    D extends unknown,
-> {
+export interface Event<E extends string, D extends unknown> {
     /** The string name of the event that occurred. */
     event: E;
 

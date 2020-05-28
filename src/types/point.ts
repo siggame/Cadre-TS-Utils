@@ -1,5 +1,5 @@
 /** A simple 2D point. */
-export interface IPoint {
+export interface Point {
     /** The X-Coordinate. */
     x: number;
 

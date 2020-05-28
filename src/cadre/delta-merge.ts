@@ -2,7 +2,7 @@
  * These constants will be sent to clients from the server.
  * They are used to understand how to merge delta states.
  */
-export interface IDeltaMergeConstants {
+export interface DeltaMergeConstants {
     /**
      * Special symbol that indicates a delta's key was removed when this value
      * is present.

@@ -1,5 +1,5 @@
-/** A reference to a game object, which just holds the ID of the game object */
-export interface IGameObjectReference {
+/** A reference to a game object, which just holds the ID of the game object. */
+export interface GameObjectReference {
     /**
      * A unique id for each instance of a GameObject or a sub class.
      * Used for client and server communication.
@@ -10,7 +10,7 @@ export interface IGameObjectReference {
 }
 
 /** Common interface all game objects implement. */
-export interface IBaseGameObject extends IGameObjectReference {
+export interface BaseGameObject extends GameObjectReference {
     /**
      * A string representing the top level Class that this game object is an
      * instance of.

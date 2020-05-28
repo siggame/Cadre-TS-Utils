@@ -1,10 +1,11 @@
+.eslintrc.js
 .gitattributes
 .gitignore
 .npmignore
-.huskyrc.json
 .nvmrc
+.prettierrc.js
 .travis.yml
-CHANGELOG.md
+tsconfig.eslint.json
 tsconfig.json
 *.tgz
 

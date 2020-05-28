@@ -10,8 +10,7 @@ import { Json } from "../types/json";
 export function safelyParseJSON(json: string): Json | Error {
     try {
         return JSON.parse(json) as Json;
-    }
-    catch (err) {
+    } catch (err) {
         return err as Error;
     }
 }

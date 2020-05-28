@@ -1,8 +1,11 @@
 /** Primitive types in JS that are not containers. */
-export type Primitive
-    = undefined
+export type Primitive =
+    | undefined
     | null
     | boolean
     | string
     | number
-    | Function; // tslint:disable-line:ban-types
+    | bigint
+    | symbol
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    | Function;

@@ -1,13 +1,12 @@
-import { IBaseGameObject } from "./base-game-object";
+import { BaseGameObject } from "./base-game-object";
 
 /** The base interface that a Player implements in a game. */
-export interface IBasePlayer extends IBaseGameObject {
+export interface BasePlayer extends BaseGameObject {
     /** The name of the player. */
     name: string;
 
     /**
-     * What type of client this is,
-     * For potential data mining purposes.
+     * What type of client this is, for potential data mining purposes.
      *
      * @example "Python", "JavaScript", or some other language.
      */

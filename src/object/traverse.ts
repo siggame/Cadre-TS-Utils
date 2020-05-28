@@ -10,17 +10,16 @@ import { objectHasProperty } from "./object-has-property";
  * @throws Throws an error when a given key is not found in the object
  * traversing.
  */
-export function traverse(obj: object, ...keys: string[]): unknown {
+export function traverse(obj: unknown, ...keys: string[]): unknown {
     if (!isObject(obj)) {
-        throw new Error(`obj ${obj} is not an object to traverse.`);
+        throw new Error(`obj ${String(obj)} is not an object to traverse.`);
     }
 
     let current: unknown = obj;
     for (const key of keys) {
         if (isObject(current) && objectHasProperty(obj, key)) {
             current = current[key];
-        }
-        else {
+        } else {
             throw new Error(`Key ${key} not found in object to traverse`);
         }
     }

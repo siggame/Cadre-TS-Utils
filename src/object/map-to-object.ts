@@ -1,4 +1,3 @@
-
 /**
  * Converts a Map to an object.
  *
@@ -8,7 +7,7 @@
 export function mapToObject<T>(
     map: Map<string, T>,
 ): { [key: string]: T | undefined } {
-    const obj: {[key: string]: T} = {};
+    const obj: { [key: string]: T } = {};
     for (const [key, value] of map) {
         obj[key] = value;
     }

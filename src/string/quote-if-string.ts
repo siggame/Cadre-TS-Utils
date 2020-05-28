@@ -6,7 +6,5 @@
  * a string.
  */
 export function quoteIfString(arg: unknown): string {
-    return typeof arg === "string"
-        ? `"${arg}"`
-        : String(arg);
+    return typeof arg === "string" ? `"${arg}"` : String(arg);
 }

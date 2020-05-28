@@ -10,7 +10,9 @@ import { UnStringified } from "../types/un-stringified";
  */
 export function unStringify(value: UnStringified): UnStringified {
     if (typeof value === "string") {
-        switch (value.toUpperCase()) { // check for booleans
+        switch (
+            value.toUpperCase() // check for booleans
+        ) {
             case "TRUE":
                 return true;
             case "FALSE":

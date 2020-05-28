@@ -1,4 +1,4 @@
-// tslint:disable:no-any = required for TS mixin logic
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
  * Extracts a constructor for a given type.
