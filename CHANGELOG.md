@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog]
 and this project adheres to [Semantic Versioning].
 
-## [2.0.0] - 2020-26-05
+## [2.0.0] - 2020-28-05
 ### Removed
 - tslint config no longer exposed or to be consumed via this repo.
   - Please use ESLint instead.
